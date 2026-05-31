@@ -2,103 +2,332 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luna Agência IA — Equipe Autônoma Completa</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<meta name="description" content="Uma equipe completa de IA. Dev, SDR, Infra, Copy e CRM operando 24/7.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=VT323&family=Geist+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#020617;color:#f8fafc;font-family:'Inter',sans-serif}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:linear-gradient(135deg,#020617 0%,#0f0a2e 50%,#020617 100%)}
-.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;margin-bottom:24px}
-.hero h1 span{color:#7c3aed}
-.hero p{font-size:1.2rem;color:#94a3b8;max-width:640px;margin:0 auto 40px}
-.btn-cta{background:#fbbf24;color:#000;padding:18px 40px;border-radius:12px;font-weight:700;font-size:1.1rem;text-decoration:none;display:inline-block;transition:transform 0.1s}
-.btn-cta:hover{transform:scale(1.03);background:#f59e0b}
-.btn-ghost{background:transparent;color:#f8fafc;padding:16px 32px;border-radius:12px;font-weight:600;font-size:1rem;text-decoration:none;border:1px solid rgba(255,255,255,0.2);display:inline-block;margin-left:16px}
-.section{padding:80px 20px;max-width:1100px;margin:0 auto}
-.section h2{font-size:2rem;font-weight:700;margin-bottom:48px;text-align:center}
-.agents-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-.agent-card{background:#0f172a;border-radius:20px;padding:32px;border-left:4px solid var(--color);transition:transform 0.2s,box-shadow 0.2s}
-.agent-card:hover{transform:translateY(-4px);box-shadow:0 0 32px rgba(124,58,237,0.2)}
-.agent-avatar{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px;background:rgba(255,255,255,0.05)}
-.agent-name{font-size:1.2rem;font-weight:700;margin-bottom:4px}
-.agent-role{font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;opacity:0.6}
-.agent-desc{color:#94a3b8;font-size:0.95rem;line-height:1.6}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin:60px 0}
-.stat{text-align:center;padding:32px 20px;background:#0f172a;border-radius:16px;border:1px solid rgba(124,58,237,0.15)}
-.stat-num{font-size:2.8rem;font-weight:900;color:#7c3aed}
-.stat-label{color:#94a3b8;margin-top:8px;font-size:0.9rem}
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:960px;margin:0 auto}
-.plan{background:#0f172a;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px;text-align:center}
-.plan.featured{border-color:#7c3aed;position:relative}
-.plan.featured::before{content:"MAIS POPULAR";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#7c3aed;color:#fff;padding:4px 16px;border-radius:999px;font-size:0.75rem;font-weight:700;letter-spacing:1px}
-.plan-name{font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;color:#94a3b8;margin-bottom:12px}
-.plan-price{font-size:3rem;font-weight:900;color:#fbbf24}
-.plan-price span{font-size:1rem;color:#94a3b8}
-.plan-features{list-style:none;margin:24px 0;text-align:left}
-.plan-features li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#94a3b8;font-size:0.9rem}
-.plan-features li::before{content:"✓ ";color:#7c3aed;font-weight:700}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
-.step{background:#0f172a;border-radius:16px;padding:28px;border:1px solid rgba(124,58,237,0.2)}
-.step-num{font-size:3rem;font-weight:900;color:#7c3aed;line-height:1}
-.step h3{font-size:1rem;font-weight:600;margin:12px 0 8px}
-.step p{color:#94a3b8;font-size:0.9rem;line-height:1.5}
-footer{text-align:center;padding:40px 20px;color:#475569;border-top:1px solid rgba(255,255,255,0.06)}
-footer a{color:#7c3aed;text-decoration:none}
-@media(max-width:640px){.hero h1{font-size:1.8rem}.btn-ghost{display:block;margin:12px 0 0}.btn-cta{width:100%;text-align:center}}
+:root{--bg:#0a0a0a;--bg-card:#0a0a0a;--bg-card-hover:#111;--purple:#7c3aed;--purple-alt:#8b5cf6;--purple-dim:#a78bfa;--purple-dark:#2e1065;--purple-glow:rgba(124,58,237,0.5);--purple-glow-strong:rgba(124,58,237,0.7);--red:#ff3030;--red-alt:#ff5555;--red-glow:rgba(255,48,48,0.55);--cyan:#00d4ff;--cyan-glow:rgba(0,212,255,0.5);--text:#e8e6df;--text-mute:#a3a3a3;--text-dim:#666;--text-purple:#a78bfa;--border-purple:rgba(124,58,237,0.4);--border-strong:rgba(124,58,237,0.7);--glow-soft:0 0 8px rgba(124,58,237,0.35);--glow:0 0 12px rgba(124,58,237,0.45),0 0 24px rgba(124,58,237,0.18);--glow-strong:0 0 14px rgba(124,58,237,0.6),0 0 32px rgba(124,58,237,0.3)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;font-size:16px;line-height:1.6;overflow-x:hidden;min-height:100vh}
+canvas#matrix-rain{position:fixed;inset:0;z-index:0;opacity:0.13;pointer-events:none}
+body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(124,58,237,0.03) 0,rgba(124,58,237,0.03) 1px,transparent 1px,transparent 3px);mix-blend-mode:overlay;opacity:0.6}
+body::after{content:"";position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,0.55) 100%)}
+.content{position:relative;z-index:10}.container{max-width:1240px;margin:0 auto;padding:0 24px}
+.alert-bar{position:sticky;top:0;z-index:60;background:linear-gradient(90deg,#c91414,#ff3030 30%,#ff5555 50%,#ff3030 70%,#c91414);background-size:200% 100%;animation:alert-shimmer 6s linear infinite;border-bottom:1px solid rgba(255,48,48,0.5);box-shadow:0 0 18px rgba(255,48,48,0.5)}
+.alert-inner{max-width:1240px;margin:0 auto;padding:9px 18px;display:flex;align-items:center;justify-content:center;gap:12px}
+.alert-text{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;color:#fff;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
+.alert-pulse{width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 10px #fff;animation:pulse 1.6s ease-in-out infinite;flex-shrink:0}
+@keyframes alert-shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(7,7,7,0.96);border-bottom:1px dashed var(--border-purple)}
+.topbar-inner{max-width:1240px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand-mark{font-family:'VT323',monospace;font-size:26px;color:var(--purple);text-shadow:0 0 8px var(--purple-glow);letter-spacing:1px}
+.brand-tag{font-size:11px;color:var(--text-purple);letter-spacing:2px;text-transform:uppercase}
+.btn-mini{padding:9px 18px;background:transparent;border:1px solid var(--purple);color:var(--purple);font-family:inherit;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all 0.2s}
+.btn-mini:hover{background:var(--purple);color:#fff;box-shadow:0 0 14px var(--purple-glow)}
+.hero{padding:70px 0 100px}.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px dashed var(--border-purple);border-radius:4px;font-size:11px;color:var(--purple);letter-spacing:2px;text-transform:uppercase;margin-bottom:26px;background:rgba(124,58,237,0.04)}
+.hero-tag .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--purple);animation:pulse 1.6s ease-in-out infinite;box-shadow:0 0 8px var(--purple-glow-strong)}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.85)}}
+h1.hero-title{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:clamp(44px,6.4vw,92px);line-height:1.02;color:var(--purple);text-shadow:0 0 20px var(--purple-glow),0 0 42px rgba(124,58,237,0.18);margin-bottom:28px;letter-spacing:-0.5px}
+h1.hero-title .accent{color:var(--text);text-shadow:none}
+.hero-sub{font-family:'Geist Mono','JetBrains Mono',monospace;font-size:clamp(18px,1.9vw,22px);line-height:1.55;color:var(--text);margin-bottom:22px;max-width:60ch}
+.hero-sub strong{color:var(--purple-alt);font-weight:600}
+.hero-stamp{display:inline-block;margin-top:14px;padding:12px 18px;border:1px solid rgba(124,58,237,0.22);background:rgba(124,58,237,0.05);font-family:'Geist Mono','JetBrains Mono',monospace;font-size:16px;color:var(--text);line-height:1.45}
+.hero-stamp b{color:var(--purple);font-weight:700}
+.btn{display:inline-block;padding:18px 36px;background:var(--purple);color:#fff;font-family:'JetBrains Mono',monospace;font-weight:800;text-decoration:none;border-radius:4px;letter-spacing:2.5px;text-transform:uppercase;font-size:14px;transition:all 0.22s;border:1px solid var(--purple);cursor:pointer;margin-top:20px}
+.btn:hover{box-shadow:0 0 28px var(--purple-glow-strong);transform:translateY(-2px);background:var(--purple-alt)}
+.hero-image-wrap{position:relative;border:1px dashed var(--border-purple);border-radius:8px;background:var(--bg-card);overflow:hidden;box-shadow:var(--glow)}
+.term-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:rgba(124,58,237,0.05);border-bottom:1px dashed var(--border-purple)}
+.term-dot{width:11px;height:11px;border-radius:50%}.term-dot.r{background:#ff5f57}.term-dot.y{background:#febc2e}.term-dot.g{background:#28c840}
+.term-bar .term-title{margin-left:12px;font-size:11px;color:var(--text-dim);letter-spacing:1px}
+.term-content{padding:24px;font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.8;color:var(--text-mute);min-height:220px}
+.stats{border-top:1px dashed var(--border-purple);border-bottom:1px dashed var(--border-purple);padding:36px 0;background:rgba(124,58,237,0.02)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center}
+@media(max-width:800px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+.stat-num{font-family:'VT323',monospace;font-size:52px;color:var(--purple);text-shadow:0 0 14px var(--purple-glow);line-height:1}
+.stat-label{font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+section{padding:100px 0;position:relative}
+.section-tag{display:inline-block;font-size:12px;color:var(--purple);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;padding:6px 12px;border:1px dashed var(--border-purple);border-radius:3px}
+h2{font-family:'JetBrains Mono',monospace;font-size:clamp(32px,4.6vw,64px);font-weight:800;color:var(--purple);line-height:1.05;text-shadow:0 0 14px var(--purple-glow);margin-bottom:18px}
+h2 .accent{color:var(--text);text-shadow:none}
+.section-lead{font-family:'Geist Mono','JetBrains Mono',monospace;font-size:19px;color:var(--text);max-width:70ch;margin-bottom:60px;line-height:1.6}
+.agents-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.agent-card{background:var(--bg-card);border:1px dashed var(--border-purple);border-radius:8px;padding:28px;font-family:'JetBrains Mono',monospace;transition:all 0.3s;position:relative;overflow:hidden}
+.agent-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--purple),transparent);opacity:0;transition:opacity 0.3s}
+.agent-card:hover{border-color:var(--border-strong);box-shadow:var(--glow);transform:translateY(-3px);background:var(--bg-card-hover)}
+.agent-card:hover::before{opacity:1}
+.agent-header{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+.agent-meta{flex:1;min-width:0}
+.agent-avatar{width:72px;height:72px;border-radius:50%;position:relative;flex-shrink:0;isolation:isolate}
+.agent-avatar::before{content:"";position:absolute;inset:-2px;border-radius:50%;background:conic-gradient(from 0deg,rgba(124,58,237,0.9) 0%,rgba(0,212,255,0.55) 35%,rgba(255,48,48,0.55) 65%,rgba(124,58,237,0.9) 100%);animation:led-spin 8s linear infinite;z-index:0}
+.agent-avatar::after{content:"";position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(from 0deg,rgba(124,58,237,0.6),rgba(0,212,255,0.35),rgba(255,48,48,0.35),rgba(124,58,237,0.6));filter:blur(6px);opacity:0.45;animation:led-spin 8s linear infinite;z-index:-1}
+.agent-avatar-inner{position:relative;z-index:2;width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;background:var(--bg-card);border:2px solid var(--bg-card)}
+@keyframes led-spin{to{transform:rotate(360deg)}}
+.agent-name{font-size:18px;font-weight:700;color:var(--text);letter-spacing:1px;margin-bottom:4px;text-transform:uppercase}
+.agent-role{font-size:14px;color:var(--purple-alt);font-style:italic;margin-bottom:0;font-family:'Geist Mono','JetBrains Mono',monospace}
+.agent-desc{font-size:13px;color:var(--text-mute);line-height:1.6;font-family:'Geist Mono','JetBrains Mono',monospace}
+.positioning{padding:130px 0;background:linear-gradient(180deg,transparent,rgba(255,48,48,0.04),transparent)}
+.positioning-block{max-width:980px;margin:0 auto;text-align:center;padding:72px 32px;border:2px solid var(--red);border-radius:10px;background:rgba(255,48,48,0.04);box-shadow:0 0 30px rgba(255,48,48,0.25),inset 0 0 30px rgba(255,48,48,0.04);position:relative}
+.positioning-block::before{content:"// SISTEMA";position:absolute;top:-12px;left:32px;background:var(--bg);padding:0 12px;font-size:11px;color:var(--red);letter-spacing:3px;font-family:'JetBrains Mono',monospace}
+.positioning-block .neg{font-family:'JetBrains Mono',monospace;font-size:clamp(28px,4.5vw,56px);font-weight:800;color:var(--red);text-shadow:0 0 18px var(--red-glow);line-height:1.05;margin-bottom:30px;letter-spacing:-0.5px}
+.positioning-block .pos{font-family:'JetBrains Mono',monospace;font-size:clamp(22px,3vw,38px);font-weight:700;color:var(--purple);text-shadow:0 0 14px var(--purple-glow);line-height:1.25;letter-spacing:-0.2px}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.step-card{background:var(--bg-card);border:1px dashed var(--border-purple);border-radius:8px;padding:32px;font-family:'JetBrains Mono',monospace;transition:all 0.3s}
+.step-card:hover{border-color:var(--border-strong);box-shadow:var(--glow-soft);transform:translateY(-2px)}
+.step-num{font-family:'VT323',monospace;font-size:52px;color:var(--purple);text-shadow:0 0 10px var(--purple-glow);line-height:1;margin-bottom:12px}
+.step-title{font-size:16px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.step-desc{font-size:14px;color:var(--text-mute);line-height:1.6;font-family:'Geist Mono','JetBrains Mono',monospace}
+.pricing-section{padding:110px 0 130px}
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:960px;margin:50px auto 0}
+.plan-card{background:var(--bg-card);border:1px dashed var(--border-purple);border-radius:10px;padding:40px 32px;font-family:'JetBrains Mono',monospace;text-align:center;position:relative;transition:all 0.3s}
+.plan-card:hover{border-color:var(--border-strong);box-shadow:var(--glow);transform:translateY(-3px)}
+.plan-card.featured{border:2px solid var(--purple);box-shadow:var(--glow-strong)}
+.plan-card.featured::before{content:"// MAIS POPULAR";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;padding:3px 16px;font-size:10px;letter-spacing:2px;border-radius:3px}
+.plan-name{font-size:11px;color:var(--text-mute);text-transform:uppercase;letter-spacing:3px;margin-bottom:16px;font-family:'Geist Mono','JetBrains Mono',monospace}
+.plan-price{font-size:clamp(32px,4vw,48px);color:var(--purple);font-weight:800;text-shadow:0 0 14px var(--purple-glow);line-height:1}
+.plan-price small{font-size:16px;color:var(--text-mute);font-weight:400;margin-left:4px}
+.plan-features{list-style:none;padding:0;margin:24px 0;text-align:left}
+.plan-features li{padding:10px 0 10px 22px;border-bottom:1px dashed rgba(124,58,237,0.15);color:var(--text-mute);font-size:14px;position:relative;font-family:'Geist Mono','JetBrains Mono',monospace}
+.plan-features li:last-child{border-bottom:none}
+.plan-features li::before{content:"▸";position:absolute;left:4px;color:var(--purple);font-weight:700}
+.plan-card .btn{width:100%;text-align:center;margin-top:16px;padding:16px 24px;font-size:13px}
+footer{padding:60px 0 36px;border-top:1px dashed var(--border-purple);background:rgba(124,58,237,0.02)}
+.footer-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:40px}
+@media(max-width:700px){.footer-trio{grid-template-columns:1fr}}
+.power{text-align:center;padding:22px;border:1px dashed var(--border-purple);border-radius:6px;font-family:'JetBrains Mono',monospace;background:rgba(124,58,237,0.02)}
+.power .ic{font-family:'VT323',monospace;font-size:38px;margin-bottom:6px;line-height:1}
+.power.luna .ic{color:var(--purple);text-shadow:0 0 12px var(--purple-glow)}
+.power.openclaw .ic{color:var(--red);text-shadow:0 0 12px var(--red-glow)}
+.power.telegram .ic{color:var(--cyan);text-shadow:0 0 12px var(--cyan-glow)}
+.power .name{font-size:16px;color:var(--text);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.power .tag{font-size:11px;color:var(--text-mute);letter-spacing:1.5px;margin-top:4px}
+.copyright{text-align:center;font-size:12px;color:var(--text-dim);letter-spacing:1.5px;font-family:'JetBrains Mono',monospace}
+@keyframes blink{50%{opacity:0}}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--purple-dark);border-radius:5px}
+@media(max-width:640px){header.topbar{display:none!important}h1,h1.hero-title{font-size:clamp(22px,7.5vw,30px)!important;line-height:1.15}h2{font-size:22px!important}.hero{padding:28px 0 36px}section{padding:28px 0!important}.stat-num{font-size:28px!important}}
+@media(prefers-reduced-motion:reduce){canvas#matrix-rain{display:none}.agent-avatar::before,.agent-avatar::after{animation:none}}
 </style>
 </head>
 <body>
-
-<section class="hero">
-  <div>
-    <p style="color:#a78bfa;font-size:0.9rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px">🤖 Agência de IA Autônoma</p>
-    <h1>Uma equipe completa de IA.<br><span>Sem CLT. Sem férias.</span><br>Sem erro humano.</h1>
-    <p>Dev, SDR, Infra, Copy e CRM — todos os agentes que sua empresa precisa, operando 24/7 por uma fração do custo de uma equipe humana.</p>
+<canvas id="matrix-rain"></canvas>
+<header class="alert-bar">
+  <div class="alert-inner">
+    <span class="alert-pulse"></span>
+    <span class="alert-text">UMA EQUIPE COMPLETA DE IA. SEM CLT. SEM FÉRIAS.</span>
+    <span class="alert-pulse"></span>
+  </div>
+</header>
+<header class="topbar">
+  <div class="topbar-inner">
     <div>
-      <a href="#planos" class="btn-cta">QUERO MINHA EQUIPE DE IA →</a>
-      <a href="#agentes" class="btn-ghost">Conhecer os agentes</a>
+      <div class="brand-mark">LUNA.AGENCIA<span style="animation:blink 1s steps(2) infinite;margin-left:2px">_</span></div>
+      <div class="brand-tag">inteligencia agentica // v1.0</div>
     </div>
-    <p style="margin-top:20px;font-size:0.85rem;color:#475569">Onboarding em 7 dias · Sem fidelidade · Cancele quando quiser</p>
+    <a href="https://t.me/LunaJDbot" class="btn-mini">CONTRATAR</a>
   </div>
-</section>
-
-<div style="background:#0a0a1a;padding:32px 20px;text-align:center;border-top:1px solid rgba(255,255,255,0.04)">
-  <p style="color:#334155;font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px">substitui ou complementa equipes em</p>
-  <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;color:#334155;font-weight:700">
-    <span>Startups</span><span>Agências</span><span>SaaS</span><span>Consultorias</span><span>E-commerce</span>
+</header>
+<main class="content">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="hero-tag"><span class="pulse-dot"></span> EQUIPE ONLINE 24/7</div>
+          <h1 class="hero-title">Uma equipe<br><span class="accent">completa de IA.</span><br>Sem CLT. Sem férias.</h1>
+          <p class="hero-sub">Dev, SDR, Infra, Copy e CRM — todos os agentes que sua empresa precisa, operando <strong>24/7</strong> por uma fração do custo de uma equipe humana.</p>
+          <div class="hero-stamp">Onboarding em <b>7 dias</b>. 14 dias de garantia. Cancele quando quiser.</div>
+          <a href="https://t.me/LunaJDbot" class="btn">QUERO MINHA EQUIPE DE IA</a>
+        </div>
+        <div class="hero-image-wrap">
+          <div class="term-bar">
+            <span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span>
+            <span class="term-title">luna@agencia:~$ ./status --all-agents</span>
+          </div>
+          <div class="term-content">
+            <div><span style="color:#7c3aed">$ </span>./status --all-agents --verbose</div>
+            <div style="color:#7c3aed;margin-top:8px">&#9658; [ONLINE] Luna — Orquestradora</div>
+            <div style="color:#7c3aed">&#9658; [ONLINE] Joal — Dev Full-Stack</div>
+            <div style="color:#a78bfa">&#9658; [ONLINE] Íris — Infra &amp; DevOps</div>
+            <div style="color:#a78bfa">&#9658; [ONLINE] Juliana — SDR Comercial</div>
+            <div style="color:#e8e6df">&#9658; [ONLINE] Jonathan — Copywriter</div>
+            <div style="color:#e8e6df">&#9658; [ONLINE] Amanda — CRM &amp; Atendimento</div>
+            <div style="margin-top:12px"><span style="color:#7c3aed">&#9679;</span> <b style="color:#7c3aed">6/6 AGENTES ATIVOS</b> — 24h sem interrupção</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="stats" style="padding:36px 0">
+    <div class="container">
+      <div class="stats-grid">
+        <div><div class="stat-num">6</div><div class="stat-label">Agentes Especializados</div></div>
+        <div><div class="stat-num">24/7</div><div class="stat-label">Sem Interrupção</div></div>
+        <div><div class="stat-num">7dias</div><div class="stat-label">Para Onboarding Completo</div></div>
+        <div><div class="stat-num">10x</div><div class="stat-label">Mais Barato que Equipe Humana</div></div>
+      </div>
+    </div>
+  </section>
+  <section id="equipe">
+    <div class="container">
+      <span class="section-tag">// equipe.principal</span>
+      <h2>Conheça sua <span class="accent">nova equipe</span></h2>
+      <p class="section-lead">Seis agentes especialistas, cada um com função clara, trabalhando em coordenação contínua 24 horas por dia.</p>
+      <div class="agents-grid">
+        <article class="agent-card">
+          <div class="agent-header">
+            <div class="agent-avatar"><div class="agent-avatar-inner">🧠</div></div>
+            <div class="agent-meta">
+              <div class="agent-name">LUNA</div>
+              <div class="agent-role">Orquestradora</div>
+            </div>
+          </div>
+          <p class="agent-desc">Coordena todos os agentes, recebe demandas pelo Telegram e distribui para o especialista certo. Sua assistente pessoal de tecnologia.</p>
+        </article>
+        <article class="agent-card">
+          <div class="agent-header">
+            <div class="agent-avatar"><div class="agent-avatar-inner">💻</div></div>
+            <div class="agent-meta">
+              <div class="agent-name">JOAL</div>
+              <div class="agent-role">Dev Full-Stack</div>
+            </div>
+          </div>
+          <p class="agent-desc">Desenvolve features, corrige bugs, faz deploy. Next.js, React, Node, Python, C#. Entrega código em produção, não só em teoria.</p>
+        </article>
+        <article class="agent-card">
+          <div class="agent-header">
+            <div class="agent-avatar"><div class="agent-avatar-inner">⚙️</div></div>
+            <div class="agent-meta">
+              <div class="agent-name">ÍRIS</div>
+              <div class="agent-role">Infra &amp; DevOps</div>
+            </div>
+          </div>
+          <p class="agent-desc">Gerencia servidores, configura CI/CD, monitora uptime. Sua VPS nunca mais fica fora do ar sem que ela saiba primeiro.</p>
+        </article>
+        <article class="agent-card">
+          <div class="agent-header">
+            <div class="agent-avatar"><div class="agent-avatar-inner">📞</div></div>
+            <div class="agent-meta">
+              <div class="agent-name">JULIANA</div>
+              <div class="agent-role">SDR Comercial</div>
+            </div>
+          </div>
+          <p class="agent-desc">Prospecta, qualifica e agenda reuniões 24/7. Integra com LinkedIn, WhatsApp e email. Seu pipeline nunca para.</p>
+        </article>
+        <article class="agent-card">
+          <div class="agent-header">
+            <div class="agent-avatar"><div class="agent-avatar-inner">✍️</div></div>
+            <div class="agent-meta">
+              <div class="agent-name">JONATHAN</div>
+              <div class="agent-role">Copywriter</div>
+            </div>
+          </div>
+          <p class="agent-desc">Cria copies para anúncios, emails, posts e landing pages. Tom de voz da sua marca, sempre consistente.</p>
+        </article>
+        <article class="agent-card">
+          <div class="agent-header">
+            <div class="agent-avatar"><div class="agent-avatar-inner">💼</div></div>
+            <div class="agent-meta">
+              <div class="agent-name">AMANDA</div>
+              <div class="agent-role">CRM &amp; Atendimento</div>
+            </div>
+          </div>
+          <p class="agent-desc">Gerencia relacionamento com clientes, dispara followups, registra histórico. Seu CRM sempre atualizado sem esforço manual.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="positioning">
+    <div class="container">
+      <div class="positioning-block">
+        <div class="neg">Não é software. Não é SaaS com limitação.</div>
+        <div class="pos">É uma equipe pronta, instalada no seu servidor, rodando 24 horas por dia.</div>
+      </div>
+    </div>
+  </section>
+  <section id="como-funciona" style="background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(124,58,237,0.025) 50%,rgba(0,0,0,0) 100%)">
+    <div class="container">
+      <span class="section-tag">// como.funciona</span>
+      <h2>Em <span class="accent">4 passos</span></h2>
+      <p class="section-lead">Da assinatura até o time operando em 7 dias. Você acompanha tudo pelo Telegram.</p>
+      <div class="steps-grid">
+        <div class="step-card"><div class="step-num">01</div><div class="step-title">Discovery</div><p class="step-desc">Entendemos seu negócio, processos e ferramentas em uma call de 1h.</p></div>
+        <div class="step-card"><div class="step-num">02</div><div class="step-title">Configuração</div><p class="step-desc">Configuramos cada agente com suas regras, tom de voz e integrações.</p></div>
+        <div class="step-card"><div class="step-num">03</div><div class="step-title">Ativação</div><p class="step-desc">Agentes entram em operação. Você acompanha tudo pelo Telegram em tempo real.</p></div>
+        <div class="step-card"><div class="step-num">04</div><div class="step-title">Escala</div><p class="step-desc">Adiciona ou remove agentes conforme seu negócio cresce. Sem burocracia.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="pricing-section" id="planos">
+    <div class="container" style="text-align:center">
+      <span class="section-tag">// investimento</span>
+      <h2 style="text-align:center">Planos</h2>
+      <p class="section-lead" style="margin:0 auto;text-align:center">Escolha a equipe ideal para o momento do seu negócio. Sem fidelidade.</p>
+      <div class="plans-grid">
+        <div class="plan-card">
+          <div class="plan-name">Starter</div>
+          <div class="plan-price"><small>R$</small>2.500<small>/mês</small></div>
+          <ul class="plan-features">
+            <li>Luna (orquestradora)</li>
+            <li>2 agentes à escolha</li>
+            <li>Suporte via Telegram</li>
+            <li>Relatório semanal</li>
+            <li>14 dias de garantia</li>
+          </ul>
+          <a href="https://t.me/LunaJDbot" class="btn">COMEÇAR</a>
+        </div>
+        <div class="plan-card featured">
+          <div class="plan-name">Growth</div>
+          <div class="plan-price"><small>R$</small>4.500<small>/mês</small></div>
+          <ul class="plan-features">
+            <li>Luna + 4 agentes</li>
+            <li>Dev, SDR, Infra e Copy</li>
+            <li>Suporte prioritário</li>
+            <li>Relatório diário</li>
+            <li>2 integrações incluídas</li>
+            <li>14 dias de garantia</li>
+          </ul>
+          <a href="https://t.me/LunaJDbot" class="btn">ESCOLHER GROWTH</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">Full</div>
+          <div class="plan-price"><small>R$</small>7.500<small>/mês</small></div>
+          <ul class="plan-features">
+            <li>Todos os 6 agentes</li>
+            <li>SLA de resposta 24h</li>
+            <li>Reunião mensal de estratégia</li>
+            <li>Integrações ilimitadas</li>
+            <li>14 dias de garantia</li>
+          </ul>
+          <a href="https://t.me/LunaJDbot" class="btn">CONTRATAR FULL</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-trio">
+      <div class="power luna"><div class="ic">[ L ]</div><div class="name">Luna</div><div class="tag">orquestradora</div></div>
+      <div class="power openclaw"><div class="ic">{&lt;&gt;}</div><div class="name">OpenClaw</div><div class="tag">infraestrutura agêntica</div></div>
+      <div class="power telegram"><div class="ic">$_</div><div class="name">Telegram</div><div class="tag">@LunaJDbot</div></div>
+    </div>
+    <div class="copyright">&copy; 2026 Luna Agência IA — Equipe autônoma para sua empresa</div>
   </div>
-</div>
-
-<div class="section" id="agentes">
-  <h2>Conheça sua nova equipe</h2>
-  <div class="agents-grid">
-    <div class="agent-card" style="--color:#7c3aed">
-      <div class="agent-avatar">🧠</div>
-      <div class="agent-name">Luna</div>
-      <div class="agent-role" style="color:#a78bfa">Orquestradora</div>
-      <div class="agent-desc">Coordena todos os agentes, recebe demandas pelo Telegram e distribui para o especialista certo. Sua assistente pessoal de tecnologia.</div>
-    </div>
-    <div class="agent-card" style="--color:#3b82f6">
-      <div class="agent-avatar">💻</div>
-      <div class="agent-name">Joal</div>
-      <div class="agent-role" style="color:#60a5fa">Dev Full-Stack</div>
-      <div class="agent-desc">Desenvolve features, corrige bugs, faz deploy. Next.js, React, Node, Python, C#. Entrega código em produção, não só em teoria.</div>
-    </div>
-    <div class="agent-card" style="--color:#06b6d4">
-      <div class="agent-avatar">⚙️</div>
-      <div class="agent-name">Íris</div>
-      <div class="agent-role" style="color:#22d3ee">Infra & DevOps</div>
-      <div class="agent-desc">Gerencia servidores, configura CI/CD, monitora uptime. Sua VPS nunca mais fica fora do ar sem que ela saiba primeiro.</div>
-    </div>
-    <div class="agent-card" style="--color:#10b981">
-      <div class="agent-avatar">📞</div>
-      <div class="agent-name">Juliana</div>
-      <div class="agent-role" style="color:#34d399">SDR Comercial</div>
-      <div class="agent-desc">Prospecta, qualifica e agenda reuniões 24/7. Integra com LinkedIn, WhatsApp e email. Seu pipeline nunca para.</div>
-    </div>
-    <div class="agent-card" style="--color:#f97316">
-      <div class="agent-avatar">✍️</div>
-      <div class="agent-name">Jonathan</div>
-      <div class="agent-role" style="color:#fb923c">Copywriter</div>
-      <div class="agent-desc">Cria copies para anúncios, emails, posts e landing pages. Tom de voz da sua
+</footer>
+<script>
+(function(){
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var canvas=document.getElementById('matrix-rain');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var w,h,columns,drops;
+  var chars='012345ABCDEF<>{}[]/=+-*';
+  function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight;var fs=16;columns=Math.floor(w/fs);drops=new Array(columns).fill(1);ctx.font=fs+'px JetBrains Mono,monospace';}
+  function draw(){ctx.fillStyle='rgba(0,0,0,0.06)';ctx.fillRect(0,0,w,h);ctx.fillStyle='#7c3aed';for(var i=0;i<drops.length;i++){var t=chars[Math.floor(Math.random()*chars.length)];ctx.fillText(t,i*16,drops[i]*16);if(drops[i]*16>h&&Math.random()>0.975)drops[i]=0;drops[i]++;}}
+  resize();window.addEventListener('resize',resize);setInterval(draw,60);
+})();
+</script>
+</body>
+</html>
